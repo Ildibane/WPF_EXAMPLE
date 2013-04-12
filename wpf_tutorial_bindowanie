@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace wpf_tutorial_bindowanie
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        private List<Person> m_oPersonList = null;
+        public MainWindow()
+        {
+            //http://www.altcontroldelete.pl/artykuly/wpf-tutorial-bindowanie/
+            InitializeComponent();
+            InitBinding();
+        }
+        private void InitBinding() 
+        {
+            m_oPersonList = new List<Person>(); 
+            m_oPersonList.Add(new Person(1, "Jan", "Kowalski", 25)); 
+            m_oPersonList.Add(new Person(2, "Adam", "Nowak", 24)); 
+            m_oPersonList.Add(new Person(3, "Agnieszka", "Kowalczyk", 23)); 
+            lstPersons.ItemsSource = m_oPersonList;
+
+            
+            
+        }
+    }
+}
